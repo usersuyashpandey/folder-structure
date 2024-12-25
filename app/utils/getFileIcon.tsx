@@ -8,12 +8,9 @@ import {
   FileJson2,
   FileText,
   FileVideo,
-  HardDrive,
-  ImageIcon,
   PlayCircle,
   Presentation,
   Table2,
-  VideoIcon,
 } from "lucide-react";
 
 export const getFileIcon = (filename: string) => {
