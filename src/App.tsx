@@ -1,14 +1,7 @@
-import type { Route } from "./+types/home";
-import FolderStructureComponent from "~/components/FolderStructure";
+import "./App.css";
+import FolderStructure from "./components/FolderStructure";
 
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Folder Structure" },
-    { name: "description", content: "Folder Structure" },
-  ];
-}
-
-export default function Home() {
+function App() {
   const jsonData = {
     Documents: ["Document1.jpg", "Document2.jpg", "Document3.jpg"],
     Desktop: ["Screenshot1.jpg", "videopal.mp4"],
@@ -23,6 +16,11 @@ export default function Home() {
       "chromedriver.dmg": [],
     },
   };
-
-  return <FolderStructureComponent data={jsonData} />;
+  return (
+    <>
+      <FolderStructure data={jsonData} />
+    </>
+  );
 }
+
+export default App;

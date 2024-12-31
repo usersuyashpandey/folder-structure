@@ -2,15 +2,14 @@ import React, { useEffect, useState } from "react";
 import {
   ChevronRight,
   ChevronDown,
-  File,
   Folder,
   Plus,
   Edit2,
   Trash2,
 } from "lucide-react";
-import type { FileSystemItem, FolderStructureProps, IFolder } from "~/types";
-import { parseJsonToStructure } from "~/utils/parseJsonToStructure";
-import { getFileIcon } from "~/utils/getFileIcon";
+import type { FileSystemItem, FolderStructureProps, IFolder } from "../types";
+import { parseJsonToStructure } from "../utils/parseJsonToStructure";
+import { getFileIcon } from "../utils/getFileIcon";
 
 const FolderStructure: React.FC<FolderStructureProps> = ({ data }) => {
   const [structure, setStructure] = useState<FileSystemItem[]>([]);
@@ -145,7 +144,7 @@ const FolderStructure: React.FC<FolderStructureProps> = ({ data }) => {
           {isFolder ? (
             <Folder size={16} className="text-blue-500" />
           ) : (
-            getFileIcon(item.name) // Correct placement of getFileIcon
+            getFileIcon(item.name)
           )}
 
           {editing === fullPath ? (

@@ -1,9 +1,6 @@
-import type { FileSystemItem, IFile, IFolder } from "~/types";
+import type { FileSystemItem } from "../types";
 
-export const parseJsonToStructure = (
-  jsonData: any,
-  name?: string
-): FileSystemItem[] => {
+export const parseJsonToStructure = (jsonData: any): FileSystemItem[] => {
   if (Array.isArray(jsonData)) {
     return jsonData
       .map((item) => {
